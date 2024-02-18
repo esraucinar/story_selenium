@@ -18,7 +18,7 @@ from selenium.webdriver.support.ui import Select
 
 
 
-#chatbot
+
 class Test_project_pairtwo:
     def setup_method(self): 
         self.driver = webdriver.Chrome()
@@ -39,7 +39,7 @@ class Test_project_pairtwo:
    
     @pytest.mark.parametrize("eposta,şifre,university,department", getData())
     def test_story(self,eposta,şifre,university,department):
-        #takvim
+#takvim
         calendar=self.driver.find_element(By.CSS_SELECTOR, gC.CALENDAR_CSS)
         calendar.click()
         calendarText=self.driver.find_element(By.XPATH,gC.CALENDAR_TEXT_XPATH)
@@ -69,7 +69,7 @@ class Test_project_pairtwo:
         closeButton = WebDriverWait(self.driver, 5).until(ec.visibility_of_element_located((By.CSS_SELECTOR,".btn-close-white")))
         closeButton.click()
         sleep(3)
-        #chatbot
+#chatbot
         iframe_element = WebDriverWait(self.driver,10).until(ec.visibility_of_element_located((By.XPATH,gC.ANASAYFA_IFRAME)))
         WebDriverWait(self.driver,10).until(ec.frame_to_be_available_and_switch_to_it(iframe_element)) 
         openChatBot = self.driver.find_element(By.XPATH, gC.CHATBOT_IFRAME)
@@ -99,7 +99,7 @@ class Test_project_pairtwo:
         self.driver.switch_to.default_content()
         sleep(5)
 
-        #login 
+#login 
         loginButton = WebDriverWait(self.driver,10).until(ec.visibility_of_element_located((By.XPATH,gC.LOGINBUTTON)))
         loginButton.click()
         sleep(2)
@@ -115,7 +115,7 @@ class Test_project_pairtwo:
         assert mesaj.text=="• Giriş başarılı."
         sleep(3)
 
-        #eğitim-senkronders
+#eğitim-senkronders
         self.driver.execute_script("window.scrollTo(0,400)")
         sleep(2)
         egitimlerim = self.driver.find_element(By.XPATH,gC.LESSONS)
@@ -140,7 +140,7 @@ class Test_project_pairtwo:
         geri_gel.click()
         sleep(3)
 
-        #profil/eğitimekleme
+#profil/eğitimekleme
         profilebutton =self.driver.find_element(By.XPATH, gC.PROFILE_XPATH)
         profilebutton.click()
         sleep(3)
