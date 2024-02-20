@@ -139,7 +139,8 @@ class Test_project_pairtwo:
         geri_gel = WebDriverWait(self.driver,15).until(ec.visibility_of_element_located((By.CSS_SELECTOR, "a path")))
         geri_gel.click()
         sleep(3)
-
+#KİŞİSEL BİLGİLERİM
+        
 #profil/eğitimekleme
         profilebutton =self.driver.find_element(By.XPATH, gC.PROFILE_XPATH)
         profilebutton.click()
@@ -179,6 +180,8 @@ class Test_project_pairtwo:
         toast_message = WebDriverWait(self.driver,10).until(ec.visibility_of_element_located((By.CSS_SELECTOR, ".toast-body")))
         assert toast_message.text == "• Eğitim bilgisi eklendi."
         sleep(2)
+
+#YABANCI DİL
         
         
         
